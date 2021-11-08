@@ -1,0 +1,21 @@
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+body{
+  line-height: 1.375;
+  color: var(--primary);
+  border-color: var(--primary);
+  padding-top: 120px;
+}
+select,textarea,input{
+  border: none;
+  background-color: var(--input_background);
+}
+select{
+  appearance: none;
+}
