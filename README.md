@@ -1,11 +1,9 @@
-# 肥宅心碎
+# 肥宅心碎 ( •́ω•̩̥̀ )
 
-功能：
+## 疑問：
+1. option沒有給value的值會自動取textNode的值？
+2. 取DOM值：label取data、input取value
 
-上方表單列：
-1. 新增資料至data
-下方卡片組建功能
-1. init渲染所有卡片組建
-2. 監聽change改變卡片渲染結果
-
-3. 自動新增選項至option
+## 心得
+前面取label的值一直取到DOM本身卡了一下，畢竟console.log()出來都長一樣，咦看typeof發現是object就知道應該是取到DOM惹。
+再來就是我的切版也太雷惹ㄅ，不懂什麼卡片區域設定`align-items: stretch`

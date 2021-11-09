@@ -116,7 +116,7 @@ console.log(areaFilter.value);
 areaFilter.addEventListener('change',e => {
   let value = e.target.value;
   if(value === 'all'){
-    render()
+    renderCard()
   }else{
     let newData = data.filter(item => item.area === value)
     renderCard(newData)

@@ -103,22 +103,24 @@ main{
 .cardArea{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: stretch;
   .card{
     width: 31%;
     margin-bottom: 38px;
   }
+  .card:not(:first-child){
+    margin-left: 2%;
+  }
 }
 .card{
   img{
     width: 100%;
-    height: 100%;
+    height: 180px;
     object-fit: cover;
     overflow: hidden;
   }
   img:hover{
-    transform: scale(1.15);
+    transform: scale(1.2);
   }
   .card-head{
     position: relative;
