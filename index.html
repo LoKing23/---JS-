@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第五週主線任務</title>
+  <title>肥宅心碎 ( •́ω•̩̥̀ )</title>
   <link rel="stylesheet" href="dist/style/all.min.css">
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css' integrity='sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==' crossorigin='anonymous'/>
 </head>
 <body>
+ 
   <section class="ticket mx-auto mb-area">
     <figure class="ticket__imgWrap">
       <img src="https://i.imgur.com/iRssPpJ.png" alt="logo">
@@ -22,47 +23,52 @@
       <h1 class="mb-4">+新增旅遊套票</h1>
       <label>
         套票名稱
-        <input type="text" name="ticket__name" placeholder="請填寫套票名稱">
+        <input type="text" name="ticket__name" value="初始值" placeholder="請填寫套票名稱">
       </label>
       <label>
         圖片網址
-        <input type="text" name="ticket__imgURL" placeholder="請填寫圖片網址">
+        <input type="text" name="ticket__imgURL" value="https://images.unsplash.com/photo-1535530992830-e25d07cfa780?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" placeholder="請填寫圖片網址">
       </label>
 
       <label>景點地區
         <select name="ticket__area">
           <option selected>請選擇景點地區</option>
-          <option value=""></option>
+          <option value="台北">台北</option>
+          <option value="台中">台中</option>
+          <option value="高雄">高雄</option>
         </select>
     </label>
       <label>
         套票金額
-        <input type="number" min="0" name="ticket__price" placeholder="請填寫套票金額">
+        <input type="number" min="0" value="2" name="ticket__price" placeholder="請填寫套票金額">
       </label>
 
       <label>
         套票組數
-        <input type="number" min="0" name="ticket__num" placeholder="請填寫套票組數">
+        <input type="number" min="0" value="2" name="ticket__num" placeholder="請填寫套票組數">
       </label>
 
       <label>
         套票星級
-        <input type="number" min="1" max="10" name="ticket__level" placeholder="請填寫套票星級">
+        <input type="number" min="1" max="10" value="2" name="ticket__level" placeholder="請填寫套票星級">
       </label>
       <label>
         套票描述
-        <textarea name="ticket__describe" maxlength="100" placeholder="請填寫套票描述(限100字)"></textarea>
+        <textarea name="ticket__describe" maxlength="100" value="asdfasdf" placeholder="請填寫套票描述(限100字)"></textarea>
       </label>
-      <input type="submit" value="新增套票">
+      <!-- <input type="submit" value="新增套票"> -->
+      <a>新增套票</a>
     </form>
   </section>
 
   <main class="bg-gray">
     <div class="container">
       <div class="mb-7">
-        <select>
-          <option selected>地區搜尋</option>
+        <select class="areaFilter">
+          <option value="all" selected>全部地區</option>
           <option value="台北">台北</option>
+          <option value="台中">台中</option>
+          <option value="高雄">高雄</option>
         </select>
         <span>本次搜尋共6筆資料</span>
       </div>
@@ -80,7 +86,7 @@
           <!-- card-body -->
           <div class="card-body">
             <h3>綠島自由行套裝行程</h3>
-            <p>嚴選超高CP值綠島自由行套裝行程，多種綠島套裝組合，提供台東綠島來回船票、綠島環島機車、綠島民宿住宿，行程加贈『綠島浮潛體驗』以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。</p>
+            <p>嚴選超高CP值綠島自以及『綠島生態導覽』，讓你用輕鬆的綠島套裝自由行，也能深度認識綠島在地文化。</p>
             <div class="card-foot">
               <div>
                 <i class="fas fa-exclamation-circle"></i>

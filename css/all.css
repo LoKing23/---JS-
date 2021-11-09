@@ -133,7 +133,7 @@ select {
   height: 110px;
 }
 
-.ticket__form input[type="submit"] {
+.ticket__form a {
   float: right;
   width: auto;
   height: auto;
@@ -146,7 +146,7 @@ select {
   cursor: pointer;
 }
 
-.ticket__form input[type="submit"]:hover {
+.ticket__form a:hover {
   background-color: var(--secondary);
 }
 
@@ -188,6 +188,9 @@ main select + span {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .cardArea .card {
