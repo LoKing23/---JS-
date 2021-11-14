@@ -199,6 +199,16 @@ main select + span {
   margin-left: 2%;
 }
 
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .card img {
   width: 100%;
   height: 180px;
@@ -240,6 +250,9 @@ main select + span {
 }
 
 .card .card-body {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 20px;
   border: 1px solid #DEE2E6;
   -webkit-box-shadow: 0px 3px 6px #00000029;
