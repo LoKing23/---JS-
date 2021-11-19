@@ -4,14 +4,14 @@ axios.get("https://raw.githubusercontent.com/hexschool/js-training/main/travelAp
   data = res.data.data;
   //森命週期
   (function init(){
-    renderCard()
+    renderAll()
   })()
 })
 .catch((err)=>{
   console.log(err);
 })
 //資料
-//1 將form資料抓出來組成obj
+//1 將form資料抓出來組成obj
 function getFormObj(){
   const labels = document.querySelectorAll('.ticket__form label');
   const obj = {};
@@ -61,6 +61,21 @@ function cleanFormValue(){
 function addData(newData){
   data.push(newData);
 }
+//3 處理C3顯示資料
+function getC3Data(){
+  let areaObj = data.reduce((acc,item) => {
+    let area = item.area;
+    if(acc[area]) acc[area]++
+    else acc[area]=1
+    return acc
+  },{})
+  let areaArr = Object.keys(areaObj);
+  let c3Data = areaArr.map((item)=>{
+    return [item,areaObj[item]]
+  })
+  console.log(c3Data);
+  return c3Data
+}
 //事件
 //1 新增套票事件-> 取input、塞入data、重新render
 const form_submit = document.querySelector('.ticket__form a')
@@ -69,7 +84,7 @@ form_submit.addEventListener('click',(e)=>{
   let newData = getFormObj();
   cleanFormValue();
   addData(newData);
-  renderCard();
+  renderAll();
 })
 //2 areaFilter事件-> 監聽改變重新render合適項目
 const areaFilter = document.querySelector('.areaFilter');
@@ -84,7 +99,7 @@ areaFilter.addEventListener('change',e => {
   }
 })
 //畫面
-// 1. render: 卡片、資料筆數
+//1. render: 卡片、資料筆數
 function renderCard(newData = data){
   //渲染卡片
   const cardArea = document.querySelector('.cardArea');
@@ -121,4 +136,32 @@ function renderCard(newData = data){
   let totalData = newData.length;
   num.innerHTML = `本次搜尋共${totalData}筆資料`
 }
+//2. render C3
+function renderC3(){
+  let c3Data = getC3Data();
+  let chart = c3.generate({
+    bindto: '#donut',
+    data: {
+      columns: c3Data,
+      type : 'donut',
+      colors: {
+        台北: '#26BFC7',
+        台中: '#5151D3',
+        高雄: '#E68618'
+      }
+    }, 
+    donut: {
+        title: "套票地區比重",
+        width: 10,
+        label: {
+          show: false
+        }
+    }
+  });
 
+}
+//3. 將依據data render的方法綁在一起
+function renderAll(){
+  renderCard()
+  renderC3()
+}
